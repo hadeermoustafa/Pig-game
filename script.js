@@ -58,6 +58,18 @@ btnHold.addEventListener("click", function () {
   scores[activePlayer] += score;
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
-  //change active or idel style
-  switchingPlayers();
+
+  if (scores[activePlayer] >= 100) {
+    //finish the game and announce winner
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.add("player--winner");
+
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.remove("player--active");
+  } else {
+    //change active or idel style
+    switchingPlayers();
+  }
 });
