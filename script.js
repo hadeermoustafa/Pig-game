@@ -12,15 +12,28 @@ const btnRoll = document.querySelector(".btn--roll");
 const currentScore0 = document.getElementById("current--0");
 const currentScore1 = document.getElementById("current--1");
 
-//setting score ;
-const scores = [0, 0];
-score0.textContent = 0;
-score1.textContent = 0;
-dice.classList.add("hidden");
+let score, activePlayer, gameIsOn, scores;
 
-let score = 0;
-let activePlayer = 0;
-let gameIsOn = true;
+function start() {
+  //setting score ;
+
+  score0.textContent = 0;
+  score1.textContent = 0;
+  scores = [0, 0];
+  score = 0;
+  activePlayer = 0;
+  gameIsOn = true;
+  currentScore0.textContent = 0;
+  currentScore0.textContent = 0;
+
+  dice.classList.add("hidden");
+  document.querySelector(".player--0").classList.add("player--active");
+  player0.classList.remove("player--winner");
+  player1.classList.remove("player--winner");
+  player0.classList.add("player--active");
+  player1.classList.remove("player--active");
+}
+start();
 //switching players
 
 function switchingPlayers() {
@@ -80,3 +93,5 @@ btnHold.addEventListener("click", function () {
     }
   }
 });
+
+btnNew.addEventListener("click", start);
