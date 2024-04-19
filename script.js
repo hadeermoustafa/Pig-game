@@ -1,6 +1,8 @@
 "use strict";
 
 //select emlements
+const name0 = document.getElementById("name--0");
+const name1 = document.getElementById("name--1");
 const player0 = document.querySelector(".player--0");
 const player1 = document.querySelector(".player--1");
 const score0 = document.getElementById("score--0");
@@ -32,6 +34,10 @@ function start() {
   player1.classList.remove("player--winner");
   player0.classList.add("player--active");
   player1.classList.remove("player--active");
+  let newName0 = prompt("Enter player 1 name:");
+  let newName1 = prompt("Enter player 2 name:");
+  name0.textContent = newName0;
+  name1.textContent = newName1;
 }
 start();
 //switching players
